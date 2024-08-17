@@ -86,6 +86,11 @@ public class FirstTest {
         //Нажатие кнопки "Сохранить", ожидание сохранения
         WebElement saveButton2 = driver.findElement(By.xpath("//*[@id=\"save\"]"));
         saveButton2.click();
+        Thread.sleep(2000);
+
+        //Закрытие браузера
+        driver.quit();
+
 
 
 
