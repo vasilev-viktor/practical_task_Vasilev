@@ -5,9 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Keys;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+
+
 
 public class FirstTest {
 
@@ -37,12 +38,14 @@ public class FirstTest {
         //Нажатие кнопки "Добавить", ожидание появления окна
         WebElement buttonAdd1 = driver.findElement(By.xpath("//button[@data-toggle='modal']"));
         buttonAdd1.click();
-        Thread.sleep(1000);
+ //       Thread.sleep(1000);
+
 
         //Кликаем на поле ввода
         //Заполнение поля ввода переменной "Маракуйя"(string)
+
         WebElement inputFieldFruit = driver.findElement(By.xpath("//input[@placeholder=\"Наименование\"]"));
-        inputFieldFruit.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         inputFieldFruit.sendKeys("Маракуйя");
 
         //Раскрытие выпадающего списка "Тип"
@@ -67,11 +70,12 @@ public class FirstTest {
         //Нажатие кнопки "Добавить", ожидание появления окна
         WebElement buttonAdd2 = driver.findElement(By.xpath("//button[@data-toggle='modal']"));
         buttonAdd2.click();
-        Thread.sleep(1000);
+
 
         //Кликаем на поле ввода
         //Заполнение поля ввода переменной "Кукумбер"(string)
         WebElement inputField = driver.findElement(By.xpath("//input[@placeholder=\"Наименование\"]"));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         inputField.click();
         inputField.sendKeys("Кукумбер");
 
@@ -90,11 +94,6 @@ public class FirstTest {
 
         //Закрытие браузера
         driver.quit();
-
-
-
-
-
 
     }
 }
